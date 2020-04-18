@@ -1,2 +1,2 @@
-const adyen = require('./lib/adyen-encrypt' );
-module.exports = adyen;
+const adyenEncrypt = require("./lib/adyen-encrypt");
+module.exports = adyenEncrypt;

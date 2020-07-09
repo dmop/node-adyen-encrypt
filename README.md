@@ -1,6 +1,6 @@
 <h1 align="center">Classic Adyen Client-Side Encryption (CSE) on Node </h1>
 
-> A NodeJS helper to encrypt data with the Adyen CSE Version: 0_1_24
+> A NodeJS helper to encrypt data with the Adyen CSE
 
 ## Prerequisites:
 
@@ -12,10 +12,26 @@ You will need a `Adyen Key`
 npm install node-adyen-encrypt
 ```
 
+## Specific Version import
+
+```js
+     const adyenEncrypt = require('node-adyen-encrypt');
+     // this will import the 0_1_24 version
+     const adyenEncrypt = require('node-adyen-encrypt')(25);
+     // this will import the 0_1_25 version
+     const adyenEncrypt = require('node-adyen-encrypt')(24);
+     // this will import the 0_1_24 version
+     const adyenEncrypt = require('node-adyen-encrypt')(23);
+     // this will import the 0_1_23 version
+     const adyenEncrypt = require('node-adyen-encrypt')(22);
+     // this will import the 0_1_22 version
+```
+
 ## Usage
 
-```
+```js
      const adyenEncrypt = require('node-adyen-encrypt');
+     //this will import the 0_1_24 version
 
      const adyenKey     =   "your key as retrieved from the Adyen Customer Area Web Service User page";
      const options = {};

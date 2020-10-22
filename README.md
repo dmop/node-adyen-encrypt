@@ -1,5 +1,7 @@
 <h1 align="center">Classic Adyen Client-Side Encryption (CSE) on Node </h1>
 
+> **[DEPRECATED]** This module is deprecated since the original Adyen CSE project is deprecated and this encrytion method will not work with latest versions of Adyen SDK. Please use the official [Adyen Web Components](https://github.com/Adyen/adyen-web) for Credit Card integration.
+
 > A NodeJS helper to encrypt data with the Adyen CSE
 
 ## Prerequisites:

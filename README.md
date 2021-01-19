@@ -17,8 +17,6 @@ npm install node-adyen-encrypt
 ## Specific Version import
 
 ```js
-     const adyenEncrypt = require('node-adyen-encrypt');
-     // this will import the 0_1_24 version
      const adyenEncrypt = require('node-adyen-encrypt')(25);
      // this will import the 0_1_25 version
      const adyenEncrypt = require('node-adyen-encrypt')(24);
@@ -32,7 +30,7 @@ npm install node-adyen-encrypt
 ## Usage
 
 ```js
-     const adyenEncrypt = require('node-adyen-encrypt');
+     const adyenEncrypt = require('node-adyen-encrypt')(24);
      //this will import the 0_1_24 version
 
      const adyenKey     =   "your key as retrieved from the Adyen Customer Area Web Service User page";

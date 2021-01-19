@@ -1,11 +1,10 @@
-function adyenEncrypt(version) {
-    version = ~~version;
+const adyenEncrypt = (versionParam) => {
+    const version = getVersion(~~versionParam);
+    return require("./lib/0_1_" + version);
+};
 
-    if (version && (version >= 22 && version <= 25)) {
-        return require("./lib/0_1_" + version);
-    }
-
-    return require("./lib/0_1_24");
-}
+const getVersion = (version) => {
+    return version && version >= 22 && version <= 25 ? version : 24;
+};
 
 module.exports = adyenEncrypt;

@@ -8,6 +8,7 @@ const adyenKey =
     "E6E8CF94156686558522629E8AF59620CBDE58327E9D84F29965E4CD0FAF" +
     "A38C632B244287EA1F7F70DAA445D81C216D3286B09205F6650262CAB415" +
     "5F024B3294A933F4DC514DE0B5686F6C2A6A2E";
+
 const cardData = {
     number: "5369 6587 0410 7605",
     cvc: "855",
@@ -16,6 +17,7 @@ const cardData = {
     expiryYear: "2022",
     generationtime: "2020-11-30T14:38:25.124Z",
 };
+
 const validationResponse = {
     valid: true,
     number: true,
@@ -30,6 +32,19 @@ const validationResponse = {
 };
 
 describe("app()", () => {
+    it("should works with v18", () => {
+        const adyenEncrypt = require("../index")(18);
+        
+        // apparently those weren't supported on v18?
+        delete cardData.generationtime;
+        delete validationResponse.generationtime;
+
+        const cseInstance = adyenEncrypt.createEncryption(adyenKey, {});
+        const validation = cseInstance.validate(cardData);
+
+        expect(validation).toEqual(validationResponse);
+    });
+
     it("should works with v22", () => {
         const adyenEncrypt = require("../index")(22);
 
